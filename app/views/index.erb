@@ -1,23 +1,52 @@
 <html>
   <head>
+    <link rel= "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
-  <h1>Explore the comedians info and their specials</h1>
-  <h4>Average Age: <%= Comedian.average_age.to_i %></h4>
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12" align = "center">
+            <h1>We have comedians and they have specials ... <i class="fa fa-cutlery" aria-hidden="true"></i></h1>
+        </div>
+    </div>
+</div>
 
-    <div class="information">
-      <% @comedians.each do |comedian| %>
-      <h5>Comedian Name: <%= comedian.name %></h5>
-      <h5>Comediam Age: <%= comedian.age %></h5>
-      <ul>
-        <%comedian.specials.each do |special| %>
-        <li><h5><%= special.name %></h5></li>
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        
+        <h5><strong>Average Age:</strong> <%= Comedian.average_age.to_i %></h5>
+        <% @comedians.each do |comedian| %>
+          <h5><strong>Comedian Name:</strong> <%= comedian.name %></h5>
+          <h5><strong>Comediam Age:</strong> <%= comedian.age %></h5>
+          <ul>
+            <%comedian.specials.each do |special| %>
+            <li><h5><%= special.name %></h5></li>
+          
+            <% end %>
+        </ul>
+        <p><strong>Special Count:</strong> <%= comedian.specials.count %></p>
+        <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
         <% end %>
-      </ul>
-      
-      <% end %>
-  </div>
+ 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+    </div>
+</div>
+
+ 
   
    
 
