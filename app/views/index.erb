@@ -1,7 +1,30 @@
-<h1>Explore the comedians on offer</h1>
+<html>
+  <head>
+  </head>
+  <body>
+
+  <h1>Explore the comedians info and their specials</h1>
+  <h4>Average Age: <%= Comedian.average_age.to_i %></h4>
+
+    <div class="information">
+      <% @comedians.each do |comedian| %>
+      <h5>Comedian Name: <%= comedian.name %></h5>
+      <h5>Comediam Age: <%= comedian.age %></h5>
+      <ul>
+        <%comedian.specials.each do |special| %>
+        <li><h5><%= special.name %></h5></li>
+        <% end %>
+      </ul>
+      
+      <% end %>
+  </div>
+  
+   
+
+  <body>
+</html>
 
 
-<% @comedians.each do |comedian|%>
-  <p><%= comedian.name %></p>
-  <p><%= comedian.age %></p>
-<% end %>
+
+
+
